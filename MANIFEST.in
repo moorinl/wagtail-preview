@@ -1,0 +1,11 @@
+exclude *
+recursive-exclude * *
+
+include MANIFEST.in
+include README.md
+
+graft src/wagtailpreview
+
+global-exclude .DS_Store
+global-exclude *.pyc
+global-exclude __pycache__
