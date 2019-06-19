@@ -14,6 +14,7 @@ if (!String.prototype.endsWith) {
     if (id.endsWith('-preview')) {
       var el = $(event.target);
       var prefix = el.closest('[data-prefix]').attr('data-prefix');
+      var url = el.closest('[data-preview-streamfield-url]').attr('data-preview-streamfield-url');
       var inputs = $('[name^="' + prefix + '-value"]');
 
       var context = {};
@@ -25,7 +26,15 @@ if (!String.prototype.endsWith) {
         context[inputName] = inputValue;
       });
 
-      alert(JSON.stringify(context));
+      $.ajax({
+        url: url,
+        method: 'POST',
+        data: JSON.stringify(context),
+        success: function(data) {
+          alert(data);
+        },
+      });
+
     }
   });
 })(jQuery);

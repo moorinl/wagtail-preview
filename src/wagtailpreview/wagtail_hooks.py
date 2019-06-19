@@ -1,7 +1,17 @@
 from django.conf import settings
+from django.conf.urls import url
 from django.templatetags.static import static
 from django.utils.html import format_html_join
 from wagtail.core import hooks
+
+from wagtailpreview.views import PreviewView
+
+
+@hooks.register('register_admin_urls')
+def register_preview_url():
+    return [
+        url(r'^preview-streamfield/$', PreviewView.as_view(), name='preview-streamfield'),
+    ]
 
 
 @hooks.register("insert_editor_js")

@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block header_controls %}
-    <div class="sequence-controls" data-prefix="{{ prefix }}">
+    <div class="sequence-controls" data-prefix="{{ prefix }}" data-preview-streamfield-url="{% url 'preview-streamfield' %}">
         <h3><label{% if child.id_for_label %} for="{{ child.id_for_label }}"{% endif %}>{{ child.block.label }}</label></h3>
         <div class="button-group button-group-square">
             <button type="button" id="{{ prefix }}-preview" title="{% trans 'Preview' %}" class="button icon text-replace icon-view">{% trans 'Preview' %}</button>
