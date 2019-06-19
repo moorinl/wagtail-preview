@@ -2,7 +2,7 @@
 
 Wagtail preview feature for StreamFields.
 
-* Issues: [https://github.com/moorinteractive/wagtail-preview/issues](https://github.com/moorinteractive/wagtail-themes/issues)
+* Issues: [https://github.com/moorinteractive/wagtail-preview/issues](https://github.com/moorinteractive/wagtail-preview/issues)
 
 ![Wagtail preview](./docs/screenshot.jpg)
 

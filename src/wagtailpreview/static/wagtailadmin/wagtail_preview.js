@@ -12,7 +12,20 @@ if (!String.prototype.endsWith) {
     var id = event.target.id;
 
     if (id.endsWith('-preview')) {
-      alert('Preview!');
+      var el = $(event.target);
+      var prefix = el.closest('[data-prefix]').attr('data-prefix');
+      var inputs = $('[name^="' + prefix + '-value"]');
+
+      var context = {};
+
+      inputs.each(function() {
+        var inputName = this.name;
+        var inputValue = this.value;
+
+        context[inputName] = inputValue;
+      });
+
+      alert(JSON.stringify(context));
     }
   });
 })(jQuery);
